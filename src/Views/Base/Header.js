@@ -2,11 +2,13 @@ import React from "react";
 import {Link, NavLink} from "react-router-dom"
 
 
+
 class SiteHeader extends React.Component {
   render() {
     return (
       <div className="container">
         <div className="d-flex flex-row justify-content-between align-items-center mt-4">
+          <NavLink to="/">
             <svg
               width="150"
               height="70"
@@ -36,10 +38,11 @@ class SiteHeader extends React.Component {
                 fill="#FF6060"
               />
             </svg>
+            </NavLink>
       
             <ul className="nav">
               <li className="nav-item">
-                <NavLink to="/Home" className="nav-link"  activeclassname="active" aria-current="page">
+                <NavLink to="/" className="nav-link"  activeclassname="active" aria-current="page">
                 Accueil
                 </NavLink>
               </li>

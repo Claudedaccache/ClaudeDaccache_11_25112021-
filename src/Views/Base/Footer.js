@@ -1,11 +1,11 @@
 import React from "react";
+import { Outlet } from "react-router";
 
 
 class Footer extends React.Component {
   render() {
     return (
-      <div className="container footer">
-        {/* <div className="mt-5"> */}
+      <div className="container footer mt-4">
             <svg
               width="150"
               height="70"
@@ -38,7 +38,6 @@ class Footer extends React.Component {
             <h3 className="rights">© 2020 Kasa. All rights reserved</h3>
       
             
-          {/* </div> */}
         </div>
     );
   }

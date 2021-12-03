@@ -41,19 +41,31 @@ class LogementRating extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="d-flex flex-column mt-4">
-          <div className="d-flex flex-row justify-content-end align-items-center">
-            <div className="d-flex flex-column">
-              <h3 className="contactName">{this.props.contactName}</h3>
+        {this.props.logement.map((lgmt) =>
+          this.props.loading || !this.props.logement ? (
+            <div className="loadingMessage">loading...</div>
+          ) : (
+            <div className="d-flex flex-column mt-4">
+              <div className="d-flex flex-row justify-content-end align-items-center">
+                <div className="d-flex flex-column">
+                  <h3 className="contactName">{lgmt.host.name}</h3>
+                </div>
+                <img
+                  className="contactPhoto"
+                  src={lgmt.host.picture}
+                  alt={lgmt.host.name}
+                ></img>
+              </div>
+              <div className="d-flex flex-row logementRatingStars">
+                {this.getRating(lgmt.rating)}
+              </div>
             </div>
-            <img className="contactPhoto" src={this.props.contactPhoto} alt={this.props.contactName}></img>
-          </div>
-          <div className="d-flex flex-row logementRatingStars">
-            {this.getRating(this.props.rating)}
-          </div>
-        </div>
+          )
+        )}
       </div>
     );
   }
 }
 export default LogementRating;
+
+

@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router";
 
 class Accordion extends React.Component {
   constructor(props) {

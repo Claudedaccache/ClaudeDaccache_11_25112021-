@@ -40,8 +40,7 @@ class App extends React.Component {
           <SiteHeader />
           <Routes>
             <Route
-              exact
-              path="/Home"
+              path="/" 
               element={
                 <BodyImage
                   text="Chez vous, partout et ailleurs"
@@ -49,11 +48,44 @@ class App extends React.Component {
                 />
               }
             >
-              <Route path="/Home" element={<Footer />}></Route>
+              <Route
+                path="/"
+                element={<Cards logement={this.state.logement} />}
+              ></Route>
             </Route>
 
             <Route
-              exact
+              path="/Logement/:id"
+              element={<Carousel logement={this.state.logement} />}
+            ></Route>
+
+            <Route
+              path="/Logement/:id"
+              element={<LogementUpperBody logement={this.state.logement} />}
+            ></Route>
+            <Route
+              path="/Logement/:id"
+              element={<LogementTag logement={this.state.logement} />}
+            ></Route>
+
+            <Route
+              path="/Logement/:id"
+              element={<LogementRating logement={this.state.logement} />}
+            ></Route>
+
+            <Route
+              path="/Logement/:id"
+              element={
+                <LogementAccordion
+                  descText="Description"
+                  descBody={this.state.logement.description}
+                  equipText="Equipment"
+                  logement={this.state.logement}
+                />
+              }
+            ></Route>
+
+            <Route
               path="/AboutUs"
               element={<BodyImage text="" image={mountain} />}
             >
@@ -68,9 +100,43 @@ class App extends React.Component {
                   />
                 }
               ></Route>
+              <Route
+                path="/AboutUs"
+                element={
+                  <Accordion
+                    text="Respect"
+                    itemclass="collapseTwo"
+                    itemTarget="#collapseTwo"
+                    itemId="headingTwo"
+                  />
+                }
+              ></Route>
+              <Route
+                path="/AboutUs"
+                element={
+                  <Accordion
+                    text="Service"
+                    itemclass="collapseThree"
+                    itemTarget="#collapseThree"
+                    itemId="headingThree"
+                  />
+                }
+              ></Route>
+              <Route
+                path="/AboutUs"
+                element={
+                  <Accordion
+                    text="Responsabilité"
+                    itemclass="collapseFour"
+                    itemTarget="#collapseFour"
+                    itemId="headingFour"
+                  />
+                }
+              ></Route>
             </Route>
             <Route path="*" element={<Error />}></Route>
           </Routes>
+          <Footer />
         </div>
       </div>
     );
