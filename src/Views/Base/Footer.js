@@ -1,11 +1,10 @@
 import React from "react";
-import { Outlet } from "react-router";
 
 
 class Footer extends React.Component {
   render() {
     return (
-      <div className="container footer mt-4">
+      <div className="container footer mt-5">
             <svg
               width="150"
               height="70"

@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet } from "react-router";
 
 class Accordion extends React.Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class Accordion extends React.Component {
 
   render() {
     return (
-      <div className="accordion" id="accordion">
+      <div className="accordionAboutUs">
         <div className="accordion-item aboutUsItem">
           <h2 className="accordion-header" id={this.itemId}>
             <button
@@ -39,7 +38,7 @@ class Accordion extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+          </div>
     );
   }
 }

@@ -2,69 +2,58 @@ import React from "react";
 import $ from "jquery";
 
 class Carousel extends React.Component {
-  // getPicIndex = () => {
-  // let carousel = document.querySelector(".carouselContainer");
-  // carousel.addEventListener("slid.bs.carousel", function () {
-  //   let total = document.querySelectorAll(".carousel-item").length;
-  //   let currentIndex = document.querySelector(".carousel-item .active").index() + 1;
-  //   var text = currentIndex + "/" + total;
-  //   return text
-  // })}
+  constructor(props) {
+    super(props);
+    this.state = {
+      innerIndicator: `1/${$(".carousel-item").length}`,
+    };
+  }
 
   getPicIndex = () => {
-    let totalItems = $(`${this.props.logement.id} .item`).length;
-    $(`${this.props.logement.id}`).on("slide.bs.carousel", function () {
-      setTimeout(function () {
-        let currentIndex =
-          $(`${this.props.logement.id} div.active`).index() + 1;
-        return "" + currentIndex + "/" + totalItems + "";
-      }, 1000);
+    let slideText = document.getElementsByClassName("slideText");
+    let myCarousel = document.getElementById("myCarousel");
+    myCarousel.addEventListener("slid.bs.carousel", () => {
+      let total = $(".carousel-item").length;
+      let currentIndex = $("#myCarousel").find(".active").index() + 1;
+      let text = `${currentIndex}/${total}`;
+      console.log(text);
+      return (slideText.innerHTML = this.setState({ innerIndicator: text }));
     });
-
-    // $("#carouselExampleIndicators").on("slid.bs.carousel", function () {
-    //   let total = $(".carousel-item").length;
-    //   let currentIndex = $("div.active").index() + 1;
-    //   currentIndex = $(".carousel-item .active").index() + 1;
-    //   let text = currentIndex + "/" + total;
-    //   return text;
-    // });
   };
 
   render() {
     return (
       <div className="container carouselContainer">
-        {this.props.logement.map((lgmt) =>
-          this.props.loading || !this.props.logement ? (
+        <div
+          id="myCarousel"
+          className="carousel slide"
+          data-bs-ride="carousel"
+          key={this.props.filteredLogement.id}
+        >
+          {this.props.loading || !this.props.filteredLogement ? (
             <div className="loadingMessage">loading...</div>
           ) : (
-            <div
-              id={lgmt.id}
-              className="carousel slide"
-              data-bs-ride="carousel"
-              key={lgmt.id}
-            >
-              {/* <div className="carousel-indicators">
+            <div>
+              <div>
                 {" "}
-                <h3 className=".slideText">{lgmt.pictures.length}</h3>
-              </div> */}
-
+                <h3 className="slideText">{this.state.innerIndicator}</h3>
+              </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src={lgmt.cover}
+                    src={this.props.filteredLogement.cover}
                     className="d-block w-100 carouselImage"
                     alt="..."
                   ></img>
                 </div>
-                {/* {this.props.pics} */}
-                {lgmt.pictures.map((pic) => {
-                  if (pic !== lgmt.cover) {
+                {this.props.filteredLogement.pictures.map((pic) => {
+                  if (pic !== this.props.filteredLogement.cover) {
                     return (
                       <div key={pic} className="carousel-item">
                         <img
                           src={pic}
                           className="d-block w-100 carouselImage"
-                          alt={lgmt.title}
+                          alt={this.props.filteredLogement.title}
                         ></img>
                       </div>
                     );
@@ -74,8 +63,9 @@ class Carousel extends React.Component {
               <button
                 className="carousel-control-prev"
                 type="button"
-                data-bs-target={`#${lgmt.id}`}
+                data-bs-target="#myCarousel"
                 data-bs-slide="prev"
+                onClick={() => this.getPicIndex()}
               >
                 <span
                   className="carousel-control-prev-icon"
@@ -86,8 +76,9 @@ class Carousel extends React.Component {
               <button
                 className="carousel-control-next"
                 type="button"
-                data-bs-target={`#${lgmt.id}`}
+                data-bs-target="#myCarousel"
                 data-bs-slide="next"
+                onClick={() => this.getPicIndex()}
               >
                 <span
                   className="carousel-control-next-icon"
@@ -96,8 +87,8 @@ class Carousel extends React.Component {
                 <span className="visually-hidden">Next</span>
               </button>
             </div>
-          )
-        )}
+          )}
+        </div>
       </div>
     );
   }

@@ -41,31 +41,34 @@ class LogementRating extends React.Component {
   render() {
     return (
       <div className="container">
-        {this.props.logement.map((lgmt) =>
-          this.props.loading || !this.props.logement ? (
-            <div className="loadingMessage">loading...</div>
-          ) : (
-            <div className="d-flex flex-column mt-4">
-              <div className="d-flex flex-row justify-content-end align-items-center">
-                <div className="d-flex flex-column">
-                  <h3 className="contactName">{lgmt.host.name}</h3>
+        {this.props.loading || !this.props.filteredLogement ? (
+          <div className="loadingMessage">loading...</div>
+        ) : (
+          <div className="contactDetails">
+            <div className="d-flex flex-row justify-content-end align-items-center">
+                <div
+                  key={this.props.filteredLogement.id}
+                  className="d-flex flex-column"
+                >
+                  <h3 className="contactName">
+                    {this.props.filteredLogement.host.name}
+                  </h3>
                 </div>
                 <img
                   className="contactPhoto"
-                  src={lgmt.host.picture}
-                  alt={lgmt.host.name}
+                  src={this.props.filteredLogement.host.picture}
+                  alt={this.props.filteredLogement.host.name}
                 ></img>
-              </div>
-              <div className="d-flex flex-row logementRatingStars">
-                {this.getRating(lgmt.rating)}
-              </div>
             </div>
-          )
+            <div className="d-flex flex-row logementRatingStars">
+              {this.props.filteredLogement.rating
+                ? this.getRating(this.props.filteredLogement.rating)
+                : "No Rating Yet!!"}
+            </div>
+          </div>
         )}
       </div>
     );
   }
 }
 export default LogementRating;
-
-

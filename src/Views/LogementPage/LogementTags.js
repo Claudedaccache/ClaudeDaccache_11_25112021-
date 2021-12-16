@@ -3,23 +3,20 @@ import React from "react";
 class LogementTag extends React.Component {
   render() {
     return (
-      <div className="container">
-        {this.props.logement.map((lgmt) =>
-          this.props.loading || !this.props.logement ? (
+      <div className="container logementTagsContainer">
+          {this.props.loading || !this.props.filteredLogement ? (
             <div className="loadingMessage">loading...</div>
           ) : (
-            <ul className="d-flex flex-row justify-content-start">
-              {/* {this.props.logementTag} */}
-              {lgmt.tags.map((tag) => {
+            <ul key={this.props.filteredLogement.id} className="d-flex flex-row">
+              {this.props.filteredLogement.tags.map((tag) => {
                 return (
                   <li key={tag} className="logementTag">
-                    {tag}
+                    {tag ? tag : ""}
                   </li>
                 );
               })}
             </ul>
-          )
-        )}
+          )}
       </div>
     );
   }
