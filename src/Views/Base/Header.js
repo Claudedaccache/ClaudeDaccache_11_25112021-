@@ -8,6 +8,7 @@ class SiteHeader extends React.Component {
     return (
       <div className="container">
         <div className="d-flex flex-row justify-content-between align-items-center mt-4">
+          <div>
           <NavLink to="/">
             <svg
               width="150"
@@ -39,8 +40,9 @@ class SiteHeader extends React.Component {
               />
             </svg>
             </NavLink>
-      
-            <ul className="nav">
+            </div>
+            <div className="navItems">
+                  <ul className="nav">
               <li className="nav-item">
                 <NavLink to="/" className="nav-link"  activeclassname="active" aria-current="page">
                 Accueil
@@ -52,6 +54,7 @@ class SiteHeader extends React.Component {
                 </NavLink>
               </li>
             </ul>
+            </div>
           </div>
         </div>
     );

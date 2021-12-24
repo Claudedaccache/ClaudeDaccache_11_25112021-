@@ -10,7 +10,7 @@ class Home extends React.Component {
     return (
       <div className="container">
         <SiteHeader />
-        <BodyImage text="Chez vous, partout et ailleurs" image={seaSide} />
+         <BodyImage text="Chez vous, partout et ailleurs" image={seaSide} />
         <Cards logement={this.props.logement} />
         <Footer />
       </div>

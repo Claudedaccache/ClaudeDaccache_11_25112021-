@@ -12,24 +12,15 @@ class App extends React.Component {
     this.state = {
       loading: true,
       logement: [],
-      filteredLogement: null,
     };
   }
-  
 
   async componentDidMount() {
     const response = await fetch("http://myjson.dit.upm.es/api/bins/f34t");
     const data = await response.json();
-    const storedData = localStorage.getItem("id");
-    console.log(storedData);
     this.setState({
       logement: data,
       loading: false,
-      filteredLogement: data.filter((itm) => {
-        if (itm.id === "c67ab8a7") {
-          return itm;
-        }
-      }),
     });
   }
 
@@ -46,9 +37,7 @@ class App extends React.Component {
             <Route path="/AboutUs" element={<AboutUs />}></Route>
             <Route
               path={"/Logement/:id"}
-              element={
-                <Logement filteredLogement={this.state.filteredLogement} />
-              }
+              element={<Logement filteredLogement={this.state.logement} />}
             ></Route>
 
             <Route path="*" element={<Error />}></Route>

@@ -3,7 +3,7 @@ import React from "react";
 class LogementAccordion extends React.Component {
   render() {
     return (
-      <div className="container accordionContainer">
+      <div className="container">
         <div key={this.props.KeyId} className="accordionPanels">
           {this.props.loading || !this.props.accordionBody ? (
             <div className="loadingMessage">loading...</div>

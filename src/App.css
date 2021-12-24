@@ -32,7 +32,6 @@ a {
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 142.6%;
   color: #ff6060;
   white-space: normal;
   margin-left: 1rem;
@@ -54,20 +53,19 @@ a:hover {
   position: relative;
   width: 100%;
   height: 223px;
-  border-radius: 25px;
+  border-radius: 20px;
   filter: brightness(60%);
   opacity: 1;
   margin-top: 2rem;
   object-fit: cover;
   object-position: 65%;
-  word-spacing: 0.5rem;
 }
 
 .apartmentImg {
   position: relative;
   width: 100%;
   height: 300px;
-  border-radius: 25px;
+  border-radius: 20px;
   filter: brightness(60%);
   opacity: 1;
   margin-top: 2rem;
@@ -77,22 +75,35 @@ a:hover {
 
 .seaSideText {
   font-family: Montserrat;
+  word-spacing: 0.5rem;
+
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
-  line-height: 142.6%;
   color: #ffffff;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   top: 200px;
+  transform: translateX(-50%);
+}
+
+/* cards */
+
+.cardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+  background: #f7f7f7;
+  border-radius: 25px;
 }
 
 .card {
   position: relative;
   height: 18rem;
   width: 22rem;
-  margin: 2rem;
+  margin: 1.5rem;
   border-radius: 10px;
 }
 
@@ -111,19 +122,6 @@ a:hover {
   box-shadow: 2px 2px 2px 2px gray;
   transform: rotate(2deg);
 }
-
-/* .contactDetails {
-  display: flex;
-  flex-direction: column;
-  margin-top: 3rem;
-} */
-
-.cardsContainer {
-  margin-top: 3rem;
-  background: #f7f7f7;
-  border-radius: 25px;
-}
-
 .card-title {
   position: absolute;
   left: 1.2rem;
@@ -222,7 +220,7 @@ a:hover {
   height: 415px;
   border-radius: 25px;
   margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .carousel-control-prev-icon,
@@ -244,23 +242,36 @@ a:hover {
   color: white;
   bottom: 20%;
   left: 50%;
+  transform: translate(-50%);
+}
+
+
+
+.lgmtInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .logementTitle {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 1.3rem;
   line-height: 142.6%;
   font-weight: bolder;
   color: #ff6060;
+  
 }
 
 .logementLocation {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 142.6%;
   color: #ff6060;
 }
@@ -270,12 +281,11 @@ a:hover {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 142.6%;
   color: #f7f7f7;
   padding: 0.3rem 1.2rem;
   background-color: #ff6060;
   border-radius: 12px;
-  margin: 1rem 0rem;
+  margin: 0.6rem 0rem;
   margin-right: 0.5rem;
   list-style-type: none;
 }
@@ -321,9 +331,16 @@ a:hover {
   border-radius: 8px;
 }
 
-.itemAccordion {
-  width: 45%;
+.lgmtAccordion {
+  width: 50%;
 }
+ .accordion-body{
+  background: #f7f7f7;
+  border-radius: 10px;
+
+
+
+} 
 
 .itemAccordion > h2 > .accordion-button {
   background: #ff6060;
@@ -399,29 +416,53 @@ a:hover {
     font-size: 15px;
   }
 
-  .contactDetails {
-    display: flex;
-    flex-direction: row-reverse !important;
-    /* justify-content: space-between !important; */
-    margin-top: 0.5rem;
-  }
   .logementRatingStars > svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .lgmtAccordion {
+    width: 100%;
+    margin: 0.5rem;
   }
 }
 
-@media screen and (max-width: 600px) {
-  /* .LogementAccordion {
+@media screen and (max-width: 760px) {
+  .aboutUsItem {
+    width: 100%;
+  }
+  .contactDetails {
+    width: 100%;
     display: flex;
-    flex-direction: column !important;
-    margin-bottom: 0.5rem;
-  } */
+    flex-direction: row-reverse !important;
+    align-items: baseline;
+    justify-content: space-between !important;
+    margin: 0.5rem;
+  }
+  .rating {
+    display: flex;
+    flex-direction: row;
+    /* align-items: baseline; */
+    width: 50%;
+    height: 100%;
+  }
+  .contact {
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
 }
 @media screen and (max-width: 400px) {
+  .logementRatingStars > svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  .slideText {
+    font-size: 1.2rem;
+  }
   .card-body,
   .card {
-    max-width: 16rem;
+    max-width: 17rem;
   }
 
   .errorType {
@@ -449,8 +490,7 @@ a:hover {
 @media screen and (max-width: 350px) {
   .card-body,
   .card {
-    max-width: 13rem;
-    min-width: 13rem;
+    width: 15rem;
     height: 13rem;
   }
   .logo {
@@ -467,5 +507,36 @@ a:hover {
   }
   .card-title {
     font-size: 15px;
+  }
+
+  .carouselContainer,
+  .carouselImage {
+    height: 20rem;
+    margin-bottom: 3rem;
+  }
+  .logementTitle {
+    font-size: 1.1rem;
+  }
+
+  .logementLocation {
+    font-size: 0.8rem;
+  }
+
+  .logementTag {
+    font-size: 0.6rem;
+  }
+
+  .contactName {
+    font-size: 0.9rem;
+  }
+
+  .contactPhoto {
+    width: 55px;
+    height: 55px;
+  }
+  .contactDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse !important;
   }
 }

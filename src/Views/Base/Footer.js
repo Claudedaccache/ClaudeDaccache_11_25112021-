@@ -34,7 +34,7 @@ class Footer extends React.Component {
               />
             </svg>
 
-            <h3 className="rights">© 2020 Kasa. All rights reserved</h3>
+            <h3 className="rights">© 2021 Kasa. All rights reserved</h3>
       
             
         </div>

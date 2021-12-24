@@ -12,7 +12,7 @@ class BodyImage extends React.Component {
     return (
       <div className="container">
         <div className="d-flex flex-row align-items-center">
-          <img src={this.image} alt="seaSide" className="MainUpperImage"></img>
+          <img src={this.image} alt={this,this.image} className="MainUpperImage"></img>
           <h3 className="seaSideText">{this.text}</h3>
         </div>
       </div>

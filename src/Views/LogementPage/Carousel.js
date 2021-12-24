@@ -1,24 +1,34 @@
 import React from "react";
-import $ from "jquery";
 
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
+    this.total = this.props.Logement.pictures.length;
     this.state = {
-      innerIndicator: `1/${$(".carousel-item").length}`,
+      currentIndex: 0,
     };
   }
 
-  getPicIndex = () => {
-    let slideText = document.getElementsByClassName("slideText");
-    let myCarousel = document.getElementById("myCarousel");
-    myCarousel.addEventListener("slid.bs.carousel", () => {
-      let total = $(".carousel-item").length;
-      let currentIndex = $("#myCarousel").find(".active").index() + 1;
-      let text = `${currentIndex}/${total}`;
-      console.log(text);
-      return (slideText.innerHTML = this.setState({ innerIndicator: text }));
-    });
+  getPicIndex = (direction) => {
+    let currentIndex = this.state.currentIndex;
+    if (direction === "next") {
+      if (this.state.currentIndex === this.total - 1) {
+        currentIndex = 0;
+      } else {
+        currentIndex += 1;
+      }
+      this.setState({ currentIndex });
+    }
+
+    if (direction === "prev") {
+      let currentIndex = this.state.currentIndex;
+      if (this.state.currentIndex === 0) {
+        currentIndex = this.total - 1;
+      } else {
+        currentIndex = currentIndex - 1;
+      }
+      this.setState({ currentIndex });
+    }
   };
 
   render() {
@@ -26,34 +36,38 @@ class Carousel extends React.Component {
       <div className="container carouselContainer">
         <div
           id="myCarousel"
-          className="carousel slide"
+          className="carousel slide "
+          data-bs-touch="false"
+          data-bs-interval="false"
           data-bs-ride="carousel"
-          key={this.props.filteredLogement.id}
+          key={this.props.Logement.id}
         >
-          {this.props.loading || !this.props.filteredLogement ? (
+          {this.props.loading || !this.props.Logement ? (
             <div className="loadingMessage">loading...</div>
           ) : (
             <div>
               <div>
                 {" "}
-                <h3 className="slideText">{this.state.innerIndicator}</h3>
+                <h3 className="slideText">
+                  {this.state.currentIndex + 1} / {this.total}
+                </h3>
               </div>
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src={this.props.filteredLogement.cover}
+                    src={this.props.Logement.cover}
                     className="d-block w-100 carouselImage"
                     alt="..."
                   ></img>
                 </div>
-                {this.props.filteredLogement.pictures.map((pic) => {
-                  if (pic !== this.props.filteredLogement.cover) {
+                {this.props.Logement.pictures.map((pic) => {
+                  if (pic !== this.props.Logement.cover) {
                     return (
                       <div key={pic} className="carousel-item">
                         <img
                           src={pic}
                           className="d-block w-100 carouselImage"
-                          alt={this.props.filteredLogement.title}
+                          alt={this.props.Logement.title}
                         ></img>
                       </div>
                     );
@@ -65,7 +79,7 @@ class Carousel extends React.Component {
                 type="button"
                 data-bs-target="#myCarousel"
                 data-bs-slide="prev"
-                onClick={() => this.getPicIndex()}
+                onClick={() => this.getPicIndex("prev")}
               >
                 <span
                   className="carousel-control-prev-icon"
@@ -78,7 +92,7 @@ class Carousel extends React.Component {
                 type="button"
                 data-bs-target="#myCarousel"
                 data-bs-slide="next"
-                onClick={() => this.getPicIndex()}
+                onClick={() => this.getPicIndex("next")}
               >
                 <span
                   className="carousel-control-next-icon"

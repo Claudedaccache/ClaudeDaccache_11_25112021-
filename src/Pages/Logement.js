@@ -3,50 +3,77 @@ import SiteHeader from "../Views/Base/Header";
 import Carousel from "../Views/LogementPage/Carousel";
 import LogementDetails from "../Views/LogementPage/LogementDetails";
 import LogementTag from "../Views/LogementPage/LogementTags";
-import LogementRating from "../Views/LogementPage/LogementRating";
+import LogementContact from "../Views/LogementPage/LogementContact";
 import LogementAccordion from "../Views/LogementPage/LogementAccordion";
+import LogementRating from "../Views/LogementPage/LogementRating";
 import Footer from "../Views/Base/Footer";
 import Error from "./Error";
+import withRouter from "../Views/Base/Wrapper";
 
 class Logement extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedResidence: null,
+    };
+  }
+
+  componentDidMount() {
+    const params = this.props.params.id;
+    const residences = this.props.filteredLogement;
+    this.setState({
+      selectedResidence: this.selectedResidence(residences, params),
+    });
+  }
+
+  selectedResidence(residences, params) {
+    for (let i = 0; i < residences.length; i++) {
+      if (residences[i].id === params) {
+        return residences[i];
+      }
+    }
+    return false;
+  }
+
   render() {
-    if (this.props.filteredLogement !== null) {
+    if (this.state.selectedResidence !== null) {
       return (
         <div className="container">
           <SiteHeader />
-          <Carousel filteredLogement={this.props.filteredLogement[0]} />
-          <div className="d-flex flex-row flex-wrap justify-content-between">
-            <div>
-              <LogementDetails
-                filteredLogement={this.props.filteredLogement[0]}
-              />
-              <LogementTag filteredLogement={this.props.filteredLogement[0]} />
+          <Carousel Logement={this.state.selectedResidence} />
+          <div className="lgmtInfo">
+            <div className="lgmtDetails">
+              <LogementDetails Logement={this.state.selectedResidence} />
+              <LogementTag Logement={this.state.selectedResidence} />
             </div>
-            <div>
-              <LogementRating
-                filteredLogement={this.props.filteredLogement[0]}
-              />
+            <div className="d-flex flex-column contactDetails">
+              <div className="contact">
+                <LogementContact Logement={this.state.selectedResidence} />
+              </div>
+              <div className="rating">
+                <LogementRating Logement={this.state.selectedResidence} />
+              </div>
             </div>
           </div>
-          <div className=" flex-row flex-wrap justify-content-between ">
-            <div>
+          <div className=" d-flex flex-row flex-wrap justify-content-between">
+            <div className="lgmtAccordion">
               {" "}
               <LogementAccordion
                 AccordionTitle="Description"
                 KeyId={"Description"}
                 itemId={"collapseOne"}
                 itemDataId={"#collapseOne"}
-                accordionBody={this.props.filteredLogement[0].description}
+                accordionBody={this.state.selectedResidence.description}
               />
             </div>
 
-            <div>
+            <div className="lgmtAccordion">
               <LogementAccordion
                 AccordionTitle="Equipment"
                 KeyId={"Equipment"}
                 itemId={"collapseTwo"}
                 itemDataId={"#collapseTwo"}
-                accordionBody={this.props.filteredLogement[0].equipments.map(
+                accordionBody={this.state.selectedResidence.equipments.map(
                   (equip) => (
                     <p key={equip}>{equip}</p>
                   )
@@ -63,5 +90,4 @@ class Logement extends React.Component {
   }
 }
 
-export default Logement;
-// d-flex flex-row flex-wrap justify-content-between
+export default withRouter(Logement);

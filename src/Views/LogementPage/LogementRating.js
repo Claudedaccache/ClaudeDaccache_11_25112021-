@@ -41,30 +41,13 @@ class LogementRating extends React.Component {
   render() {
     return (
       <div className="container">
-        {this.props.loading || !this.props.filteredLogement ? (
+        {this.props.loading || !this.props.Logement ? (
           <div className="loadingMessage">loading...</div>
         ) : (
-          <div className="contactDetails">
-            <div className="d-flex flex-row justify-content-end align-items-center">
-                <div
-                  key={this.props.filteredLogement.id}
-                  className="d-flex flex-column"
-                >
-                  <h3 className="contactName">
-                    {this.props.filteredLogement.host.name}
-                  </h3>
-                </div>
-                <img
-                  className="contactPhoto"
-                  src={this.props.filteredLogement.host.picture}
-                  alt={this.props.filteredLogement.host.name}
-                ></img>
-            </div>
-            <div className="d-flex flex-row logementRatingStars">
-              {this.props.filteredLogement.rating
-                ? this.getRating(this.props.filteredLogement.rating)
-                : "No Rating Yet!!"}
-            </div>
+          <div className="d-flex flex-row logementRatingStars" key={this.props.Logement.id}>
+            {this.props.Logement.rating
+              ? this.getRating(this.props.Logement.rating)
+              : "No Rating Yet!!"}
           </div>
         )}
       </div>
