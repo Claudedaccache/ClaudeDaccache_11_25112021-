@@ -18,11 +18,13 @@ class Logement extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await fetch("http://myjson.dit.upm.es/api/bins/f34t");
+    const data = await response.json();
     const params = this.props.params.id;
-    const residences = this.props.filteredLogement;
+    // const residences = this.props.filteredLogement;
     this.setState({
-      selectedResidence: this.selectedResidence(residences, params),
+      selectedResidence: this.selectedResidence(data, params),
     });
   }
 
@@ -32,7 +34,7 @@ class Logement extends React.Component {
         return residences[i];
       }
     }
-    return false;
+    return null;
   }
 
   render() {
