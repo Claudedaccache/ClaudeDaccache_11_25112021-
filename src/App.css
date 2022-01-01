@@ -14,238 +14,26 @@ a {
   font-family: "Montserrat", sans-serif;
 }
 
-/* Main Page */
-
-.logo {
-  margin-right: 3rem;
-}
-
 .loadingMessage {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
 }
 
-.nav-link {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  color: #ff6060;
-  white-space: normal;
-  margin-left: 1rem;
-}
-
-.active {
-  text-decoration: underline !important;
-  text-decoration-color: #ff6060;
-  text-underline-offset: 2px;
-}
-
-.nav-link:focus,
-.nav-link:hover,
-a:hover {
-  color: #ff6060;
-}
-
-.MainUpperImage {
-  position: relative;
-  width: 100%;
-  height: 223px;
-  border-radius: 20px;
-  filter: brightness(60%);
-  opacity: 1;
-  margin-top: 2rem;
-  object-fit: cover;
-  object-position: 65%;
-}
-
-.apartmentImg {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  border-radius: 20px;
-  filter: brightness(60%);
-  opacity: 1;
-  margin-top: 2rem;
-  object-fit: cover;
-  object-position: 65%;
-}
-
-.seaSideText {
-  font-family: Montserrat;
-  word-spacing: 0.5rem;
-
-  font-style: normal;
-  font-weight: 500;
-  font-size: 48px;
-  color: #ffffff;
-  position: absolute;
-  left: 50%;
-  top: 200px;
-  transform: translateX(-50%);
-}
-
-/* cards */
-
-.cardsContainer {
+.mainLoadingMessage{
+  font-size: 2rem;
+  height: 100vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 3rem;
-  background: #f7f7f7;
-  border-radius: 25px;
-}
-
-.card {
-  position: relative;
-  height: 18rem;
-  width: 22rem;
-  margin: 1.5rem;
-  border-radius: 10px;
-}
-
-.card-body {
-  width: 22rem;
-  transform: translateX(-13px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 96, 96, 1) 59%,
-    rgba(201, 101, 109, 1) 91%
-  );
-  border-radius: 10px;
-  cursor: pointer;
-}
-.card-body:hover {
-  box-shadow: 2px 2px 2px 2px gray;
-  transform: rotate(2deg);
-}
-.card-title {
-  position: absolute;
-  left: 1.2rem;
-  bottom: 0.8rem;
-  color: #f7f7f7;
-  font-family: Montserrat;
-  font-style: normal;
-  font-size: 20px;
-  width: 10rem;
-}
-
-/* About Us Page */
-
-.aboutUsItem {
-  width: 80%;
-  margin: 0.2rem 0;
-  color: #ff6060;
-  background: #f6f6f6;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-}
-
-.accordion-item {
-  border: none;
-}
-
-.aboutUsItem > .accordion-header > button {
-  color: #ffffff;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  background: #ff6060;
-  border-radius: 8px;
-  margin-right: 1rem;
-}
-
-.accordionAboutUs {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Error Page */
-
-.errorPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.errorType {
-  margin-top: 5rem;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 280px;
   color: #ff6060;
-}
 
-.errorMessage {
-  margin-top: 0.5rem;
-  color: #ff6060;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32x;
-  line-height: 142.6%;
-}
-
-.errorBackwardSentence {
-  margin: 5rem 0;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 142.6%;
-  display: flex;
-  align-items: flex-end;
-  text-decoration-line: underline;
-  color: #ff6060;
-  cursor: pointer;
 }
 
 /* Logement Page */
-
-.carouselContainer,
-.carouselImage {
-  position: relative;
-  width: 100%;
-  height: 415px;
-  border-radius: 25px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 8rem;
-  height: 6rem;
-}
-#myCarousel {
-  position: relative;
-}
-
-.slideText {
-  position: absolute;
-  font-family: Montserrat;
-  font-style: normal;
-  z-index: 1000;
-  font-size: 1.6rem;
-  font-weight: normal;
-  color: white;
-  bottom: 20%;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-
 
 .lgmtInfo {
   width: 100%;
@@ -255,182 +43,21 @@ a:hover {
   align-items: baseline;
   justify-content: space-between;
 }
-
-.logementTitle {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.3rem;
-  line-height: 142.6%;
-  font-weight: bolder;
-  color: #ff6060;
-  
-}
-
-.logementLocation {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 142.6%;
-  color: #ff6060;
-}
-
-.logementTag {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  color: #f7f7f7;
-  padding: 0.3rem 1.2rem;
-  background-color: #ff6060;
-  border-radius: 12px;
-  margin: 0.6rem 0rem;
-  margin-right: 0.5rem;
-  list-style-type: none;
-}
-
-.contactName {
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 142.6%;
-  color: #ff6060;
-  width: 5rem;
-}
-
-.contactPhoto {
-  width: 70px;
-  height: 70px;
-  margin: 0.5rem;
-  background-color: gray;
-  border-radius: 50%;
-}
-
-.logementRatingStars > svg {
-  margin-right: 0.5rem;
-  margin-top: 0.6rem;
-  color: rgb(197, 197, 197);
-}
-
-.logementTagsContainer > ul {
-  padding: 0;
-}
-
 .contactDetails {
   display: flex;
   flex-direction: column;
 }
 
-.accordion-item:last-of-type .accordion-button.collapsed,
-.accordion-item:last-of-type .accordion-button.collapsed {
-  border-radius: 8px;
-}
-
 .lgmtAccordion {
-  width: 50%;
-}
- .accordion-body{
-  background: #f7f7f7;
-  border-radius: 10px;
-
-
-
-} 
-
-.itemAccordion > h2 > .accordion-button {
-  background: #ff6060;
-  color: white;
-  margin-right: 1rem;
-}
-
-.accordion-button.collapsed::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #ff6060;
-  color: white;
-}
-
-.bodyText {
-  color: #ff6060;
-}
-.bodyText > p {
-  margin-bottom: 0.5rem;
-}
-
-.accordion-button:not(.collapsed)::after {
-  background-size: 1.5rem;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-
-/* Footer Page */
-
-.footer {
-  height: 8rem;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.rights {
-  color: white;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 142.6%;
-  display: flex;
-  align-items: flex-end;
-  text-align: center;
-  margin-top: 1rem;
+  width: 47%;
 }
 
 @media screen and (max-width: 992px) {
-  .logo {
-    margin-right: 4rem;
-  }
-  .seaSideText {
-    font-size: 30px;
-  }
-
-  .card-body,
-  .card {
-    width: 17rem;
-  }
-  .errorType {
-    font-size: 140px;
-  }
-
-  .errorMessage {
-    font-size: 18px;
-  }
-
-  .errorBackwardSentence {
-    font-size: 15px;
-  }
-
-  .logementRatingStars > svg {
-    width: 2rem;
-    height: 2rem;
-  }
-
   .lgmtAccordion {
     width: 100%;
     margin: 0.5rem;
   }
-}
 
-@media screen and (max-width: 760px) {
-  .aboutUsItem {
-    width: 100%;
-  }
   .contactDetails {
     width: 100%;
     display: flex;
@@ -438,102 +65,23 @@ a:hover {
     align-items: baseline;
     justify-content: space-between !important;
     margin: 0.5rem;
-  }
-  .rating {
-    display: flex;
-    flex-direction: row;
-    /* align-items: baseline; */
-    width: 50%;
-    height: 100%;
+    align-items: center;
+
   }
   .contact {
     align-items: center;
     width: 50%;
     height: 100%;
   }
-}
-@media screen and (max-width: 400px) {
-  .logementRatingStars > svg {
-    width: 1rem;
-    height: 1rem;
-  }
-  .slideText {
-    font-size: 1.2rem;
-  }
-  .card-body,
-  .card {
-    max-width: 17rem;
-  }
-
-  .errorType {
-    font-size: 130px;
-  }
-
-  .errorMessage {
-    font-size: 15px;
-  }
-
-  .errorBackwardSentence {
-    font-size: 13px;
-  }
-  .seaSideText {
-    font-size: 27px;
-  }
-  .aboutUsItem > .accordion-header > button,
-  .itemAccordion > h2 > .accordion-button {
-    font-size: 15px;
-  }
-  .nav-link {
-    font-size: 14px;
+  .rating {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
   }
 }
+
 @media screen and (max-width: 350px) {
-  .card-body,
-  .card {
-    width: 15rem;
-    height: 13rem;
-  }
-  .logo {
-    margin-right: 1rem;
-  }
-
-  .footer > svg {
-    width: 120px;
-    height: 60px;
-    margin-top: 0.5rem;
-  }
-  .rights {
-    font-size: 12px;
-  }
-  .card-title {
-    font-size: 15px;
-  }
-
-  .carouselContainer,
-  .carouselImage {
-    height: 20rem;
-    margin-bottom: 3rem;
-  }
-  .logementTitle {
-    font-size: 1.1rem;
-  }
-
-  .logementLocation {
-    font-size: 0.8rem;
-  }
-
-  .logementTag {
-    font-size: 0.6rem;
-  }
-
-  .contactName {
-    font-size: 0.9rem;
-  }
-
-  .contactPhoto {
-    width: 55px;
-    height: 55px;
-  }
   .contactDetails {
     width: 100%;
     display: flex;

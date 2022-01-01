@@ -1,0 +1,47 @@
+.itemAccordion:last-of-type .accordion-button.collapsed,
+.itemAccordion:last-of-type .accordion-button.collapsed {
+  border-radius: 8px;
+}
+
+.logementAccordionBody {
+  background: #f7f7f7;
+  border-radius: 10px;
+}
+
+.logementAccordionBtn {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  background: #ff6060;
+  border-radius: 8px !important;
+  margin-right: 1rem;
+}
+.itemAccordion {
+  border: none;
+}
+
+.itemAccordion > h2 > .accordion-button {
+  background: #ff6060;
+  color: white;
+  margin-right: 1rem;
+}
+
+.logementAccordionBtn.collapsed::after,
+.logementAccordionBtn:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.logementAccordionBtn:not(.collapsed) {
+  background-color: #ff6060;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.bodyText,
+.bodyText > p {
+  color: #ff6060;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}

@@ -1,18 +1,19 @@
 import React from "react";
+import styles from "../LogementAccordion/LogementAccordion.module.css"
 
 class LogementAccordion extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <div key={this.props.KeyId} className="accordionPanels">
           {this.props.loading || !this.props.accordionBody ? (
             <div className="loadingMessage">loading...</div>
           ) : (
-            <div className="accordion-item itemAccordion">
+            <div className={`accordion-item ${styles.itemAccordion}`}>
               <h2 className="accordion-header">
                 <button
                   type="button"
-                  className="accordion-button collapsed"
+                  className={`accordion-button collapsed  ${styles.logementAccordionBtn}`}
                   data-bs-toggle="collapse"
                   data-bs-target={this.props.itemDataId}
                 >
@@ -24,8 +25,8 @@ class LogementAccordion extends React.Component {
                 className="accordion-collapse collapse"
                 data-bs-parent={this.props.itemDataId}
               >
-                <div className="accordion-body">
-                  <div className="bodyText">{this.props.accordionBody}</div>
+                <div className={`accordion-body ${styles.logementAccordionBody}`}>
+                  <div className={styles.bodyText}>{this.props.accordionBody}</div>
                 </div>
               </div>
             </div>
@@ -36,3 +37,5 @@ class LogementAccordion extends React.Component {
   }
 }
 export default LogementAccordion;
+
+

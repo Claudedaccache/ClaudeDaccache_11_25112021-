@@ -1,0 +1,42 @@
+.NavLink {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ff6060;
+  white-space: normal;
+  margin-left: 1rem;
+  text-decoration:none !important;
+  text-decoration-color: #ff6060;
+}
+
+.Active {
+  text-decoration: underline !important;
+  text-decoration-color: #ff6060;
+  text-underline-offset: 3px;
+}
+
+
+
+.NavLink:focus,
+.NavLink:hover,
+a {
+  color: #ff6060;
+}
+
+@media screen and (max-width: 992px) {
+  .Logo {
+    margin-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .NavLink {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .Logo {
+    margin-right: 1rem;
+  }
+}

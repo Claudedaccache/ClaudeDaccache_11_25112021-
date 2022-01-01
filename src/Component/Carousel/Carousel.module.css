@@ -1,0 +1,43 @@
+.carouselContainer,
+.carouselImage {
+  position: relative;
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.prevbtn,
+.nextBtn {
+  width: 7rem;
+  height: 5rem;
+}
+
+#myCarousel {
+  position: relative;
+}
+
+.slideText {
+  position: absolute;
+  font-family: Montserrat;
+  font-style: normal;
+  z-index: 1000;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: white;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@media screen and (max-width: 400px) {
+  .slideText {
+    font-size: 1.2rem;
+  }
+  .carouselContainer,
+  .carouselImage {
+    margin-top: 0.5rem;
+    height: 69vw;
+  }
+}

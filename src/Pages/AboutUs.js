@@ -1,16 +1,15 @@
 import React from "react";
-import SiteHeader from "../Views/Base/Header";
 import mountain from "../Assets/mountains.png";
-import Accordion from "../Views/AboutUsPage/Accordion";
-import BodyImage from "../Views/Base/Body_image";
-import Footer from "../Views/Base/Footer";
+import Accordion from "..//Component/Accordion/Accordion";
+import CoverImage from "../Component/CoverImage/CoverImage"
+import Layout from "../Containers/Layout/Layout"
 
 class AboutUs extends React.Component {
   render() {
     return (
       <div className="container">
-        <SiteHeader />
-        <BodyImage text="" image={mountain} />
+        <Layout>
+        <CoverImage text="" image={mountain} />
         <Accordion
       text="Fiabilité"
       itemclass="collapseOne"
@@ -35,7 +34,7 @@ class AboutUs extends React.Component {
       itemTarget="#collapseFour"
       itemId="headingFour"
     />
-     <Footer />
+     </Layout>
       </div>
     );
   }

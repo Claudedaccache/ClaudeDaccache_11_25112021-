@@ -1,19 +1,18 @@
 import React from "react";
-import SiteHeader from "../Views/Base/Header";
-import Cards from "../Views/MainPage/Card";
+import Cards from "../Component/Cards/Cards"
 import seaSide from "../Assets/seaSidePic.png";
-import BodyImage from "../Views/Base/Body_image";
-import Footer from "../Views/Base/Footer";
+import CoverImage from "../Component/CoverImage/CoverImage";
+import Layout from "../Containers/Layout/Layout"
 
 class Home extends React.Component {
   render() {
     return (
       <div className="container">
-        <SiteHeader />
-         <BodyImage text="Chez vous, partout et ailleurs" image={seaSide} />
+       < Layout>
+         <CoverImage text="Chez vous, partout et ailleurs" image={seaSide} />
         <Cards logement={this.props.logement} />
-        <Footer />
-      </div>
+        </Layout>
+        </div>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../Carousel/Carousel.module.css"
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -33,10 +34,10 @@ class Carousel extends React.Component {
 
   render() {
     return (
-      <div className="container carouselContainer">
+      <div className={styles.carouselContainer}>
         <div
           id="myCarousel"
-          className="carousel slide "
+          className="carousel slide"
           data-bs-touch="false"
           data-bs-interval="false"
           data-bs-ride="carousel"
@@ -48,7 +49,7 @@ class Carousel extends React.Component {
             <div>
               <div>
                 {" "}
-                <h3 className="slideText">
+                <h3 className={styles.slideText}>
                   {this.state.currentIndex + 1} / {this.total}
                 </h3>
               </div>
@@ -56,7 +57,7 @@ class Carousel extends React.Component {
                 <div className="carousel-item active">
                   <img
                     src={this.props.Logement.cover}
-                    className="d-block w-100 carouselImage"
+                    className={styles.carouselImage}
                     alt="..."
                   ></img>
                 </div>
@@ -66,7 +67,7 @@ class Carousel extends React.Component {
                       <div key={pic} className="carousel-item">
                         <img
                           src={pic}
-                          className="d-block w-100 carouselImage"
+                          className={styles.carouselImage}
                           alt={this.props.Logement.title}
                         ></img>
                       </div>
@@ -82,7 +83,7 @@ class Carousel extends React.Component {
                 onClick={() => this.getPicIndex("prev")}
               >
                 <span
-                  className="carousel-control-prev-icon"
+                  className={`${styles.prevbtn} carousel-control-prev-icon`}
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Previous</span>
@@ -95,7 +96,7 @@ class Carousel extends React.Component {
                 onClick={() => this.getPicIndex("next")}
               >
                 <span
-                  className="carousel-control-next-icon"
+                  className={`${styles.nextBtn} carousel-control-next-icon`}
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Next</span>

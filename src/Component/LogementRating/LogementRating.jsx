@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../LogementRating/LogementRating.module.css"
 
 class LogementRating extends React.Component {
   getRating = (rating) => {
@@ -12,6 +13,7 @@ class LogementRating extends React.Component {
           viewBox="0 0 30 30"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          key={i + "n"}
         >
           <path
             d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z"
@@ -28,6 +30,7 @@ class LogementRating extends React.Component {
           viewBox="0 0 30 30"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          key={i}
         >
           <path
             d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z"
@@ -40,11 +43,11 @@ class LogementRating extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         {this.props.loading || !this.props.Logement ? (
           <div className="loadingMessage">loading...</div>
         ) : (
-          <div className="d-flex flex-row logementRatingStars" key={this.props.Logement.id}>
+          <div className={styles.logementRatingStars} key={this.props.Logement.id}>
             {this.props.Logement.rating
               ? this.getRating(this.props.Logement.rating)
               : "No Rating Yet!!"}

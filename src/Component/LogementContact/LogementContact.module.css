@@ -1,0 +1,40 @@
+
+.contactName {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ff6060;
+  width: 4.5rem;
+}
+.contactIdentity{
+  display: flex;
+  flex-direction: column;
+}
+
+.contactPhoto {
+  width: 70px;
+  height: 70px;
+  margin: 0.5rem;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+
+
+@media screen and (max-width: 350px) {
+  .contactName {
+    font-size: 0.9rem;
+    margin: 0;
+
+  }
+
+  .contactPhoto {
+    width: 55px;
+    height: 55px;
+  }
+
+}
