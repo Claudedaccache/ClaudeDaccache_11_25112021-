@@ -15,13 +15,17 @@ class Cards extends React.Component {
                 <Link
                   to={`/Logement/${lgmt.id}`}
                   className={`card-body ${styles.cardBody}`}
-                  // style={{
-                  //   backgroundImage: `url(${lgmt.cover})`,
-                  // }}
                 >
-                  <img src={lgmt.cover}  style={{
-                    width: "100%", height:"100%", borderRadius: "10px"
-                  }} alt="" />
+                  <img
+                    src={lgmt.cover}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "10px",
+                      objectFit: "cover",
+                    }}
+                    alt=""
+                  />
                   <h5 className={styles.cardTitle}>{lgmt.title}</h5>
                 </Link>
               </div>
