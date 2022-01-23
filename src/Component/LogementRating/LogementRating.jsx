@@ -5,7 +5,7 @@ class LogementRating extends React.Component {
   getRating = (rating) => {
     let output = [];
 
-    for (var i = rating; i >= 1; i--)
+    for (let i = rating; i >= 1; i--)
       output.push(
         <svg
           width="30"
